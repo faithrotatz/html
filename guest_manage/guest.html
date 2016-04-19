@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en" ng-app="panyuan">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link rel="stylesheet" href="../theme/css/global.css">
+<link rel="stylesheet" href="../theme/css/keyuan.css">
+
+
+
+
+<body ng-controller="panctl">
+  <section class="headercon">
+     <div class="daohang">
+       <img src="../resources/img/image/zhuye.png" alt="">
+       <span>首页</span>
+       <img src="../resources/img/image/gengduo.png" alt=""class="gengduo">
+       <span>盘源</span>
+        <img src="../resources/img/image/gengduo.png" alt=""class="gengduo">
+        <span class="active">客源</span>
+     </div>
+     <div class="yixuan">
+      <div type><span>已选标签：</span></div>
+     
+       <div class="yixuan1"data="leibie" type><span>类别</span><img src="../resources/img/image/cha.png" alt=""></div>
+       
+     <div class="clearall" type>清空</div>
+     </div>
+     
+  </section>
+ 	
+  <section id="maincontent">
+     <div class="content">
+
+     <div class="saixuan">
+      <div class="leibie">
+        <span>类别</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+        <ul>
+         <li data="leibie">类别</li>
+         <li data="leibie">小区商铺</li>
+         <li data="leibie">购物中心</li>
+         <li data="leibie"id="leibie_last">商业街商铺</li>
+         
+        </ul>
+      </div>
+      <div class="leibie">
+        <span>意向</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+        <ul>
+         <li data="zhuangtai">已审核</li>
+         <li data="zhuangtai">未审核</li>
+         <li data="zhuangtai">已成交</li>
+         <li data="zhuangtai">已下架</li>
+         
+        </ul>
+      </div>
+      <div class="leibie">
+        <span>业务</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+      </div>
+      <div class="leibie large">
+        <span>面积区间</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+          <ul>
+          <li data="mianji">0-50m²</li>
+          <li data="mianji">50-100m²</li>
+          <li data="mianji">100-200m²</li>
+          <li data="mianji">200-300m²</li>
+          <li data="mianji">300-400m²</li>
+        </ul>
+      </div>
+        <div class="leibie small mianji1">
+
+        </div>
+        <span class="zhi">至</span>
+        <div class="leibie small mianji1">
+        </div>
+      <div class="leibie large">
+        <span>租金区间</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+            <ul>
+          <li data="zujin">0-1万</li>
+          <li data="zujin">1万-2万</li>
+          <li data="zujin">2万-3万</li>
+          <li data="zujin">3万-4万</li>
+          <li data="zujin">4万-5万</li>
+        </ul>
+      </div>
+        <div class="leibie small">
+        </div>
+        <span class="zhi">至</span>
+        <div class="leibie small">
+        </div>  
+        <div class="leibie large">
+        <span>跟进日期</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+          
+      </div>
+        <div class="leibie small">
+        </div>
+        <span class="zhi">天未跟进</span> 
+        <div class="fa-bu">添加客户</div>
+       <div class="sousuo ">搜索</div>
+     
+
+    </div>
+  </div>
+    <div class="tablehead">
+       <span class="th1">客户类型</span>
+       <span class="th4">客户名称</span>
+       <span class="th1">城市</span>
+       <span class="th1">区域</span>
+       <span class="th1">商家级别</span>
+       <span class="th5">需求
+      
+       </span>
+       <span class="th6">意向区域
+      
+       </span>
+       <span class="th3">意向商圈
+  
+       </span>
+       <span class="th2">意向面积
+     
+       </span>
+       <span class="th7">意向租金
+     
+       </span>
+       <span class="th8">意向总价</span>
+       <span class="th7">未跟进天数</span>
+       <span class="th7">转公类型</span>
+       <span class="th7">转公日期</span>
+       </div>
+    <div class="tablebody">
+    <div class="row" ng-repeat="value in arr">
+      
+        <span class="th1 ">
+          个体商户
+        </span>
+       <span class="th4 fymc">
+         奇才云南大酒楼
+       </span>
+       <span class="th1 ">
+        深圳
+       </span>
+       <span class="th1 project">福田</span>
+       <span class="th1 mianji">商家级别</span>
+       <span class="th5 weituo">
+        <span id="zu">租</span>
+       
+       </span>
+       <span class="th6 ">意向区域
+       
+       </span>
+       <span class="th3 ">意向商圈
+       
+       </span>
+       <span class="th2 area">意向面积
+       
+       </span>
+       <span class="th7 qian">意向租金
+       
+       </span>
+       <span class="th8 qian">
+         意向总价
+     </span>
+       <span class="th7">未跟进天数</span>
+       <span class="th7">转公类型</span>
+       <span class="th7">转公日期</span>
+    
+    </div>
+    </div>
+    <div class="tablefooter">
+    <img src="../resources/img/image/shouye.png" alt="">
+    <img src="../resources/img/image/shangyige.png" alt="">
+    <input type="text">
+    <img src="../resources/img/image/xiayige.png" alt="">
+    <img src="../resources/img/image/moye.png" alt="">
+     <span>共5页</span>
+    </div>
+  </section>
+  <section class="cehua" >
+    <div class="cehuanav">
+      <div class="close">
+        <img src="../resources/img/image/close.png" alt="">
+      </div>
+      <ul>
+        <li>
+         <img src="../resources/img/image/xiugai3.png" alt="">
+        <span>修改</span>  
+      </li>
+          
+        <li>  
+          <img src="../resources/img/image/chajilu.png" alt=""><span>查记录</span>
+      </li>
+     <li>
+           <img src="../resources/img/image/chengjiao.png" alt="">  
+           <span>转私客</span>
+        </li>
+       
+      
+      </ul>
+    </div>
+    <div class="cehuacon">
+      <!--头信息-->
+  <ul class="cehua_one">
+    
+       <li>
+         
+       <span>七彩云南大楼</span>
+       </li>
+        
+  </ul>
+      <ul class="cehua_two">
+      <li>经纪人：赵丽刘</li>
+      <li>|</li>
+      <li>最后跟进时间：2016-03-08 16:40</li>
+      </ul>
+     <ul class="cehua_three" >
+      <li class="current">客源信息</li>
+      <li>联系人</li>
+      <li>跟进记录</li>
+      
+  </ul>
+    <div class="con-card currentcard"data="客源信息">
+      <div >
+        <div class="logo">
+          
+        </div>
+      
+      <ul class="cardone">
+        <li><span>类   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</span>商业街商铺</li>
+        <li><span>所在城市：</span>深圳市福田区</li>
+        <li><span>经营行业：</span>电话机刷减肥快六点十分尽快就飞快的</li>
+      </ul>
+    </div>
+     
+      <ul class="cardfour hide">
+          <li>
+           
+          <span>店铺数量：</span><span>2层服饰普</span>
+          </li>
+          <li>
+          <span>主要网店：</span><span>减肥快六点</span>
+          </li>
+          <li>
+              
+          <span>客单消费：</span><span>无</span>
+                  
+              
+          </li>
+      </ul>
+        <p class="cardfive hide"style="display:none">
+            <span>商家介绍：</span>
+            <span>几点上课等级考试等级考试口袋老师看到了打开了代课老师代课老师代课老师代课老师上的考虑是老师的
+             几点上课等级考试等级考试口袋老师看到了打开了代课老师代课老师代课老师代课老师上的考虑是老师的
+                几点上课等级考试等级考试口袋老师看到了打开了代课老师代课老师代课老师代课老师上的考虑是老师的
+            </span>
+        </p>
+      <div class="more">
+      <p>更多详细信息</p><img src="../resources/img/image/more.png" alt="">
+    </div>
+    </div>
+
+    </div>
+    
+  
+   
+
+
+ 
+<!--==========委托信息=================-->
+  <div class="cehuafooter">
+   <div class="delegate">
+    <!--面积-->
+     <ul class="footerone">
+       <li>
+         <span>面积区间：</span><span>80m²-100m²</span>
+       </li>
+       <li>
+         <span>层&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高：</span><span>10m</span>
+       </li>
+       <li>
+         <span>转 手 &nbsp;费：</span><span>10万</span>
+       </li>
+     </ul>
+     <!--租金-->
+     <ul class="footertwo">
+       <li>
+         <span>月 租 &nbsp;金：</span><span>1000元-20000元</span>
+       </li>
+       <li>
+         <span>租金单位：</span><span>元</span>
+       </li>
+       <li>
+         <span>租凭年限：</span><span>3年</span>
+       </li>
+     </ul>
+     <!--价钱-->
+     <ul>
+       <li>
+         <span>购买总价：</span><span>100万-200万</span>
+       </li>
+       <li>
+         <span>购买单价：</span><span>7万/m²-7.5万/m²</span>
+       </li>
+     </ul>
+     <!--位置-->
+     <ul>
+       <li>意向位置：</li>
+       <li>福田、罗湖</li>
+     </ul>
+     <!--商铺标签-->
+     
+     <ul class="hide">
+       <li>商铺标签：</li>
+       <li>餐饮功能</li>
+       <li>阔绰外援</li>
+
+     </ul>
+     <!--描述-->
+     <p class="cardfive hide"style="display:none">
+       <span>
+         详细信息：
+       </span>
+       <span>
+         克劳福德对方考虑的的开发力度的开发力度的开发力度的开发力度的开发力度代理客服来电的开发力度
+       </span>
+     </p>
+     <div class="more">
+      <p>更多详细信息</p><img src="../resources/img/image/more.png" alt="">
+    </div>
+    
+   </div>
+   
+      
+        
+
+   </div> 
+   <!--==============委托完成===========================-->
+  </section>
+  <button>添加</button>
+
+</body>
+<script src="../scripts/m_js/query.js"></script>
+
+
+<script src="../scripts/m_js/keyuan.js"></script>
+<script src="../scripts/m_js/panyuan.js"></script>
+
+
+
+</html>

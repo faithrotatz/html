@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en" ng-app="panyuan">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<link rel="stylesheet" href="../theme/css/global.css">
+<link rel="stylesheet" href="../theme/css/panyuan.css">
+
+
+<body ng-controller="panctl">
+   <section class="headercon">
+     <div class="daohang">
+       <img src="../resources/img/image/zhuye.png" alt="">
+       <span>首页</span>
+       <img src="../resources/img/image/gengduo.png" alt=""class="gengduo">
+       <span>盘源</span>
+        <img src="../resources/img/image/gengduo.png" alt=""class="gengduo">
+        <span class="active">二手盘源</span>
+     </div>
+     <div class="yixuan">
+      <div ><span>已选标签：</span></div>
+       
+       <div class="yixuan1"data="leibie"><span>类别</span><img src="../resources/img/image/cha.png" alt=""></div>
+       <!--<div class="yixuan2">喔喔你<img src="../resources/img/image/cha.png" alt=""></div>-->
+     <div class="clearall">清空</div>
+     </div>
+     
+   </section>
+ 	
+  <section id="maincontent">
+      <div class="content">
+
+    <div class="saixuan">
+      <div class="leibie">
+        <span>类别</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+        <ul>
+         
+         <li data="leibie">小区商铺</li>
+         <li data="leibie">购物中心</li>
+         <li data="leibie"id="leibie_last">商业街商铺</li>
+         
+        </ul>
+      </div>
+      <div class="leibie">
+        <span>状态</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+        <ul>
+         <li data="zhuangtai">已审核</li>
+         <li data="zhuangtai">未审核</li>
+         <li data="zhuangtai">已成交</li>
+         <li data="zhuangtai">已下架</li>
+         
+        </ul>
+      </div>
+      <div class="leibie">
+        <span>位置</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+      </div>
+      <div class="leibie">
+        <span>特色</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+      </div>
+      <div class="leibie">
+        <span>业务</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+      </div>
+      <div class="leibie large">
+        <span>面积区间</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+          <ul>
+          <li data="mianji">0-50m²</li>
+          <li data="mianji">50-100m²</li>
+          <li data="mianji">100-200m²</li>
+          <li data="mianji">200-300m²</li>
+          <li data="mianji">300-400m²</li>
+        </ul>
+      </div>
+        <div class="leibie small mianji1">
+
+        </div>
+        <span class="zhi">至</span>
+        <div class="leibie small mianji1">
+        </div>
+      <div class="leibie large">
+        <span>租金区间</span>
+        <img src="../resources/img/image/xiala.png" alt="">
+            <ul>
+          <li data="zujin">0-1万</li>
+          <li data="zujin">1万-2万</li>
+          <li data="zujin">2万-3万</li>
+          <li data="zujin">3万-4万</li>
+          <li data="zujin">4万-5万</li>
+        </ul>
+      </div>
+        <div class="leibie small">
+        </div>
+        <span class="zhi">至</span>
+        <div class="leibie small">
+        </div>  
+        <div class="fa-bu">发布房源</div>
+       <div class="sousuo ">搜索</div>
+       </div>
+    
+  </div>
+    <div class="tablehead">
+       <span class="th1">委托</span>
+       <span class="th2">商圈</span>
+       <span class="th3">房源名称</span>
+       <span class="th4">项目</span>
+       <span class="th5">建筑面积<img src="../resources/img/image/panyuan.png" alt=""></span>
+       <span class="th5">套内面积
+       <img src="../resources/img/image/panyuan.png" alt="">
+       </span>
+       <span class="th6">租金
+       <img src="../resources/img/image/panyuan.png" alt="">
+       </span>
+       <span class="th1">转手费
+       <img src="../resources/img/image/panyuan.png" alt="">
+       </span>
+       <span class="th1">总价
+       <img src="../resources/img/image/panyuan.png" alt="">
+       </span>
+       <span class="th1">单价
+       <img src="../resources/img/image/panyuan.png" alt="">
+       </span>
+       <span class="th7">钥匙</span>
+       <span class="th8">经纪人</span>
+       <span class="th8">状态</span>
+       <span class="th2">跟进日期</span>
+       </div>
+    <div class="tablebody">
+    <div class="row" ng-repeat="value in arr">
+      
+        <span class="th1 weituo"><span id="zu">{{value.weituo}}</span><span id="shou">售</span></span>
+       <span class="th2 shangquan">{{value.shangquan}}</span>
+       <span class="th3 fymc"ng-click="xuanran($index)">{{value.fymc}}
+       </span>
+       <span class="th4 project">{{value.project}}</span>
+       <span class="th5 mianji">56m²</span>
+       <span class="th5 mianji">56m²
+       
+       </span>
+       <span class="th6 qian">1000
+       
+       </span>
+       <span class="th1 qian">1000
+       
+       </span>
+       <span class="th1 qian">1000
+       
+       </span>
+       <span class="th1 qian">1000
+       
+       </span>
+       <span class="th7 yaoshi"><span>
+         <img src="../resources/img/image/yaoshi.png" alt="">
+       </span></span>
+       <span class="th8">经纪人</span>
+       <span class="th8">状态</span>
+       <span class="th2">跟进日期</span>
+    
+    </div>
+  </div>
+  <div class="tablefooter">
+    <img src="../resources/img/image/shouye.png" alt="">
+      <img src="../resources/img/image/shangyige.png" alt="">
+      <input type="text">
+      <img src="../resources/img/image/xiayige.png" alt="">
+      <img src="../resources/img/image/moye.png" alt="">
+     <span>共5页</span>
+  </div>
+  </section>
+  <button>添加</button>
+
+
+  <section class="cehua" >
+    <div class="cehuanav">
+      <div class="close">
+        <img src="../resources/img/image/close.png" alt="">
+      </div>
+      <ul>
+        <li class="record">  
+          <img src="../resources/img/image/chajilu.png" alt=""><span>查记录</span>
+          <div>
+              <p>查看操作记录</p>
+              <span><img src="../resources/img/image/close.png" alt=""></span>
+            <ul>
+              <li>跟进记录</li>
+              <li>改价记录</li>
+              <li>业主记录</li>
+            </ul>
+
+              <div class="table">
+                  <div class="tableone">
+
+
+                  <table cellpadding="0"cellspacing="0"border="1"data="跟进记录">
+                      <tr><th>序号</th><th>类型</th><th>操作内容</th><th>操作时间</th><th>姓名</th></tr>
+                      <tr>
+                          <td class="td1">1</td>
+                          <td class="td1" >增改</td>
+                          <td class="td2">跟进记录</td>
+                          <td class="td3">的好时机</td>
+                          <td class="td4">斯孔德拉斯</td></tr>
+                      <tr>
+                          <td class="td1">1</td>
+                          <td class="td1" >增改</td>
+                          <td class="td2">床前明月光金卡戴珊达克赛德的开始三季度开始的数据端口</td>
+                          <td class="td3">的好时机</td>
+                          <td class="td4">斯孔德拉斯</td></tr>
+                      <tr>
+                          <td class="td1">1</td>
+                          <td class="td1" >增改</td>
+                          <td class="td2">床前明月光金卡戴珊达克赛德的开始三季度开始的数据端口</td>
+                          <td class="td3">的好时机</td>
+                          <td class="td4">斯孔德拉斯</td></tr>
+                      <tr>
+                          <td class="td1">1</td>
+                          <td class="td1" >增改</td>
+                          <td class="td2">床前明月光金卡戴珊达克赛德的开始三季度开始的数据端口</td>
+                          <td class="td3">的好时机</td>
+                          <td class="td4">斯孔德拉斯</td></tr>
+
+
+
+
+                  </table>
+              <table cellpadding="0"cellspacing="0"border="1"data="改价记录">
+                  <tr><th>序号</th><th>类型</th><th>操作内容</th><th>操作时间</th><th>姓名</th></tr>
+                  <tr>
+                      <td class="td1">1</td>
+                      <td class="td1" >增改</td>
+                      <td class="td2">改价记录</td>
+                      <td class="td3">的好时机</td>
+                      <td class="td4">斯孔德拉斯</td></tr>
+                  <tr>
+                      <td class="td1">1</td>
+                      <td class="td1" >增改</td>
+                      <td class="td2">床前明月光金卡戴珊达克赛德的开始三季度开始的数据端口</td>
+                      <td class="td3">的好时机</td>
+                      <td class="td4">斯孔德拉斯</td></tr>
+                  <tr>
+                      <td class="td1">1</td>
+                      <td class="td1" >增改</td>
+                      <td class="td2">床前明月光金卡戴珊达克赛德的开始三季度开始的数据端口</td>
+                      <td class="td3">的好时机</td>
+                      <td class="td4">斯孔德拉斯</td></tr>
+                  <tr>
+                      <td class="td1">1</td>
+                      <td class="td1" >增改</td>
+                      <td class="td2">床前明月光金卡戴珊达克赛德的开始三季度开始的数据端口</td>
+                      <td class="td3">的好时机</td>
+                      <td class="td4">斯孔德拉斯</td></tr>
+
+
+
+
+              </table>
+                  <table cellpadding="0"cellspacing="0"border="1"data="业主记录">
+                      <tr><th>序号</th><th>类型</th><th>操作内容</th><th>操作时间</th><th>姓名</th></tr>
+                      <tr>
+                          <td class="td1">1</td>
+                          <td class="td1" >增改</td>
+                          <td class="td2">业主记录</td>
+                          <td class="td3">的好时机</td>
+                          <td class="td4">斯孔德拉斯</td></tr>
+                      <tr>
+                          <td class="td1">1</td>
+                          <td class="td1" >增改</td>
+                          <td class="td2">床前明月光金卡戴珊达克赛德的开始三季度开始的数据端口</td>
+                          <td class="td3">的好时机</td>
+                          <td class="td4">斯孔德拉斯</td></tr>
+                      <tr>
+                          <td class="td1">1</td>
+                          <td class="td1" >增改</td>
+                          <td class="td2">床前明月光金卡戴珊达克赛德的开始三季度开始的数据端口</td>
+                          <td class="td3">的好时机</td>
+                          <td class="td4">斯孔德拉斯</td></tr>
+                      <tr>
+                          <td class="td1">1</td>
+                          <td class="td1" >增改</td>
+                          <td class="td2">床前明月光金卡戴珊达克赛德的开始三季度开始的数据端口</td>
+                          <td class="td3">的好时机</td>
+                          <td class="td4">斯孔德拉斯</td></tr>
+
+
+
+
+                  </table>
+                  </div>
+                  <div class="tablefoo">
+
+                 <img src="../resources/img/image/shouye.png" alt="">
+                 <img src="../resources/img/image/shangyige.png" alt="">
+
+                 <img src="../resources/img/image/xiayige.png" alt="">
+                 <img src="../resources/img/image/moye.png" alt="">
+
+                 <span>共2页</span>
+                 <span>18条记录</span>
+                 <input type="text">
+                 <span>跳转</span>
+             </div>
+
+          </div>
+      </li>
+        <li>
+          <img src="../resources/img/image/xiugai.png" alt="">
+          <span>改盘</span>
+
+        </li>
+        <li>
+         <img src="../resources/img/image/xiugai1.png" alt="">
+        <span>修改</span>  
+      </li>
+        <li>
+        <img src="../resources/img/image/tuipan.png" alt="">
+        <span>推盘</span></li>
+        <li>
+           <img src="../resources/img/image/chengjiao.png" alt="">  
+           <span>转成交</span>
+        </li>
+      </ul>
+    </div>
+    <div class="cehuacon">
+      <!--头信息-->
+      <ul class="cehua_one">
+       <li class="weituo">
+         <span>{{value.weituo}}</span>
+         <span id="shou">售</span>
+
+       </li>
+       <li>
+         
+         <span>{{value.shangquan}}</span>
+       </li>
+       <li>
+         <div>查看地图</div>
+       </li>
+      </ul>
+      <ul class="cehua_two">
+      <li>经纪人：赵丽刘</li>
+      <li>|</li>
+      <li>状态：未成交</li>
+      <li>|</li>
+      <li>最后跟进时间：2016-03-08 16:40</li>
+    </ul>
+    <ul class="cehua_three" >
+      <li class="current">盘源信息</li>
+      <li>业主</li>
+      <li>跟进记录</li>
+      <li>成交报告</li>
+      <li>盘源图片</li>
+    </ul>
+    <div class="con-card currentcard"data="盘源信息">
+      <ul class="cardone">
+        <li><span>类   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：</span>商业街商铺</li>
+        <li><span>位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 置：</span>深圳市福田区</li>
+        <li><span>地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</span>电话机刷减肥快六点十分尽快就飞快的</li>
+      </ul>
+      <ul class="cardtwo">
+        <li><span>建筑面积：</span>56m²</li>
+        <li><span>经营状态：</span>是</li>
+        <li class="clearleft"><span>套内面积：</span>300m²</li>
+        <li><span>经营业态：</span>家电卖场、社区超市方式都分开</li>
+        <li class="clearleft"><span>管理费用：</span>30/m²</li>
+      </ul>
+      <ul class="cardthree">
+        <li ><span>商铺标签：</span></li>
+        <li>餐饮功能</li>
+        <li>活动时间</li>
+        <li>等级考试了</li>
+        <li>导航数据库</li>
+
+      </ul> 
+      <ul class="cardfour hide">
+          <li>
+              <ul>
+                  <li><span>楼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;层：</span><span>2层服饰普</span></li>
+                  <li><span>上  下 &nbsp;水：</span><span>有</span></li>
+                  <li><span>层&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;高：</span><span>4m</span></li>
+              </ul>
+          </li>
+          <li>
+              <ul>
+                  <li><span>装修状态：</span><span>减肥快六点</span></li>
+                  <li><span>开&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间：</span><span>有</span></li>
+                  <li><span>外&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;摆：</span><span>4m</span></li>
+              </ul>
+          </li>
+          <li>
+              <ul>
+                  <li><span>餐饮功能：</span><span>无</span></li>
+                  <li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;深：</span><span>有</span></li>
+                  <li><span>停 车 位：</span><span>4m</span></li>
+              </ul>
+          </li>
+      </ul>
+        <p class="cardfive hide"style="display:none">
+            <span>详细描述：</span>
+            <span>几点上课等级考试等级考试口袋老师看到了打开了代课老师代课老师代课老师代课老师上的考虑是老师的
+             几点上课等级考试等级考试口袋老师看到了打开了代课老师代课老师代课老师代课老师上的考虑是老师的
+                几点上课等级考试等级考试口袋老师看到了打开了代课老师代课老师代课老师代课老师上的考虑是老师的
+            </span>
+        </p>
+      <div class="more">
+      <p>更多详细信息</p><img src="../resources/img/image/more.png" alt="">
+    </div>
+    </div>
+      <div class="con-card "data="业主">
+      <ul class="cardone">
+        <li>类   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：商业街商铺</li>
+        <li>位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 置：深圳市福田区</li>
+        <li>地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：电话机刷减肥快六点十分尽快就飞快的</li>
+      </ul>
+      <ul class="cardtwo">
+        <li>建筑面积：56m²</li>
+        <li>经营状态：是</li>
+        <li class="clearleft">套内面积：300m²</li>
+        <li>经营业态：家电卖场、社区超市方式都分开</li>
+        <li class="clearleft">管理费用：30/m²</li>
+      </ul>
+      <ul class="cardthree">
+        <li >商铺标签：</li>
+        <li>餐饮功能</li>
+        <li>活动时间</li>
+        <li>等级考试了</li>
+        <li>导航数据库</li>
+
+      </ul> 
+
+      <div class="more">
+      <p>更多详细信息</p><img src="../resources/img/image/more.png" alt="">
+    </div>
+    </div>
+      <div class="con-card "data="跟进记录">
+      <ul class="cardone">
+        <li>类   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：商业街商铺</li>
+        <li>位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 置：深圳市福田区</li>
+        <li>地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：电话机刷减肥快六点十分尽快就飞快的</li>
+      </ul>
+      <ul class="cardtwo">
+        <li>建筑面积：56m²</li>
+        <li>经营状态：是</li>
+        <li class="clearleft">套内面积：300m²</li>
+        <li>经营业态：家电卖场、社区超市方式都分开</li>
+        <li class="clearleft">管理费用：30/m²</li>
+      </ul>
+      <ul class="cardthree">
+        <li >商铺标签：</li>
+        <li>餐饮功能</li>
+        <li>活动时间</li>
+        <li>等级考试了</li>
+        <li>导航数据库</li>
+
+      </ul> 
+
+      <div class="more">
+      <p>更多详细信息</p><img src="../resources/img/image/more.png" alt="">
+    </div>
+    </div>
+      <div class="con-card "data="成交报告">
+      <ul class="cardone">
+        <li>类   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：商业街商铺</li>
+        <li>位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 置：深圳市福田区</li>
+        <li>地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：电话机刷减肥快六点十分尽快就飞快的</li>
+      </ul>
+      <ul class="cardtwo">
+        <li>建筑面积：56m²</li>
+        <li>经营状态：是</li>
+        <li class="clearleft">套内面积：300m²</li>
+        <li>经营业态：家电卖场、社区超市方式都分开</li>
+        <li class="clearleft">管理费用：30/m²</li>
+      </ul>
+      <ul class="cardthree">
+        <li>商铺标签：</li>
+        <li>餐饮功能</li>
+        <li>活动时间</li>
+        <li>等级考试了</li>
+        <li>导航数据库</li>
+
+      </ul> 
+
+      <div class="more">
+      <p>更多详细信息</p><img src="../resources/img/image/more.png" alt="">
+    </div>
+    </div>
+      <div class="con-card "data="盘源图片">
+      <ul class="cardone">
+        <li>类   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型：商业街商铺</li>
+        <li>位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 置：深圳市福田区</li>
+        <li>地 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：电话机刷减肥快六点十分尽快就飞快的</li>
+      </ul>
+      <ul class="cardtwo">
+        <li>建筑面积：56m²</li>
+        <li>经营状态：是</li>
+        <li class="clearleft">套内面积：300m²</li>
+        <li>经营业态：家电卖场、社区超市方式都分开</li>
+        <li class="clearleft">管理费用：30/m²</li>
+      </ul>
+      <ul class="cardthree">
+        <li >商铺标签：</li>
+        <li>餐饮功能</li>
+        <li>活动时间</li>
+        <li>等级考试了</li>
+        <li>导航数据库</li>
+
+      </ul> 
+
+      <div class="more">
+      <p>更多详细信息</p><img src="../resources/img/image/more.png" alt="">
+    </div>
+    </div>
+
+    
+    </div>
+    <div class="cehuafooter">
+        <h5>佣金</h5>
+        <ul id="commission">
+            <li><span>读取方式：</span>按租金月份收取</li>
+            <li><span>月份数：</span>1.5个月</li>
+            <li><span>总额：</span>3万元</li>
+        </ul>
+      <h5>委托信息</h5>
+      <ul>
+        <li class="zu"id="zu">
+          <span>租</span>
+          <ul class="dijia">
+            <li>低价</li>
+            <li><span>月租金：</span><span>20000元/月</span></li>
+            <li><span>租金单位：</span><span>358元/月/m²</span></li>
+          </ul>
+          <ul>
+            <li>面价</li>
+            <li><span>月租金：</span><span>20000元/月</span></li>
+            <li><span>租金单位：</span><span>358元/月/m²</span></li>
+            <li><span>租凭期限：</span><span>不限</span></li>
+          </ul>
+        </li>
+
+
+        <li class="zhuan zu"id="zhuan">
+          <span>转</span>
+          <ul class="dijia">
+            <li>低价</li>
+            <li><span>月租金：</span><span>20000元/月</span></li>
+            <li><span>租金单位：</span><span>358元/月/m²</span></li>
+             <li><span>转手费：</span><span>358元/月/m²</span></li>
+          </ul>
+          <ul>
+            <li>面价</li>
+            <li><span>月租金：</span><span>20000元/月</span></li>
+            <li><span>租金单位：</span><span>358元/月/m²</span></li>
+            <li><span>转手费：</span><span>358元/月/m²</span></li>
+            <li><span>合同租凭期：</span><span>2016-04-01至2016-06-01</span></li>
+            <li><span>剩余租期：</span><span>2016-04-01至2016-06-01</span></li>
+            <li><span>租凭期限：</span><span>2016-04-01至2016-06-01</span></li>
+          </ul>
+
+        </li>
+        <li class="shou zu"id="shou1">
+          <span>售</span>
+             <ul class="dijia">
+            <li>低价</li>
+            <li><span>总价：</span><span>20000元/月</span></li>
+            <li><span>单价：</span><span>358元/月/m²</span></li>
+          </ul>
+          <ul>
+            <li>面价</li>
+            <li><span>总价：</span><span>20000元/月</span></li>
+            <li><span>单价：</span><span>358元/月/m²</span></li>
+            
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+<script src="../scripts/m_js/query.js"></script>
+<script src="../scripts/m_js/angular.js"></script>
+
+<script src="../scripts/m_js/database.js"></script>
+<script src="../scripts/m_js/panyuan.js"></script>
+<script src="../scripts/m_js/pan-angular.js"></script>
+
+
+</html>
